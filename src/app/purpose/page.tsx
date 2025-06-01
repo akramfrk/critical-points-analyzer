@@ -8,7 +8,7 @@ export default function PurposePage() {
         {/* Mathematical Quote Section */}
         <div className="mb-12 border-l-4 border-slate-400 dark:border-slate-600 pl-6 py-2 italic">
           <p className="text-slate-700 dark:text-slate-300 font-serif text-xl mb-2">
-            "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program."
+            &ldquo;Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.&rdquo;
           </p>
           <p className="text-right text-sm text-slate-500 dark:text-slate-400">
             — Linus Torvalds

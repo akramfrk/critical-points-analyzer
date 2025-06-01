@@ -1,6 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
