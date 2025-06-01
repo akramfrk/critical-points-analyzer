@@ -1,25 +1,25 @@
 "use client";
 import React from "react";
 import { FloatingNav } from "../ui/floating-navbar";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import { Home, MessageSquare, User } from "lucide-react";
 
 export function FloatingNavDemo() {
   const navItems = [
     {
       name: "Home",
       link: "/",
-      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <Home className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
       name: "About",
       link: "/about",
-      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <User className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
       name: "Purpose",
       link: "/purpose",
       icon: (
-        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+        <MessageSquare className="h-4 w-4 text-neutral-500 dark:text-white" />
       ),
     },
   ];
