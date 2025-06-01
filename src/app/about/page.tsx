@@ -8,19 +8,11 @@ import { InlineMath, BlockMath } from 'react-katex';
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="container mx-auto px-4 py-12 max-w-4xl pt-35">
         <div className="mb-8 flex items-center justify-between">
           <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
             About Critical Points Analyzer
           </h1>
-          <Link href="/">
-            <Button variant="outline" className="flex items-center gap-2 transition-all hover:shadow-sm">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Back to Analyzer
-            </Button>
-          </Link>
         </div>
 
         {/* Introduction Section */}

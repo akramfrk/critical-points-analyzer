@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <div className="container mx-auto py-10 px-4 max-w-7xl">
+      <div className="container mx-auto pt-35 pb-10 px-4 max-w-7xl">
         <header className="mb-10">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">

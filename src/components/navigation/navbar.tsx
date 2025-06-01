@@ -8,19 +8,17 @@ export function FloatingNavDemo() {
     {
       name: "Home",
       link: "/",
-      icon: <Home className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <Home className="h-5 w-5 sm:h-4 sm:w-4" />,
     },
     {
       name: "About",
       link: "/about",
-      icon: <User className="h-4 w-4 text-neutral-500 dark:text-white" />,
+      icon: <User className="h-5 w-5 sm:h-4 sm:w-4" />,
     },
     {
       name: "Purpose",
       link: "/purpose",
-      icon: (
-        <MessageSquare className="h-4 w-4 text-neutral-500 dark:text-white" />
-      ),
+      icon: <MessageSquare className="h-5 w-5 sm:h-4 sm:w-4" />,
     },
   ];
   
