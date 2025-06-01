@@ -68,14 +68,14 @@ export function parseFunction(expression: string): { fn: math.EvalFunction, expr
     // Convert any possible quadratic form to a safe version
     if (/[a-zA-Z]\^2/.test(processedInput)) {
       console.log('Found power notation with ^2, safe handling');
-      let safeExpression = processedInput.replace(/([a-zA-Z])\^2/g, '$1*$1');
+      const safeExpression = processedInput.replace(/([a-zA-Z])\^2/g, '$1*$1');
       console.log('Converted to safe multiplication:', safeExpression);
       
       try {
         const fn = math.compile(safeExpression);
         fn.evaluate({ x: 0, y: 0 }); // Test evaluation
         return { fn, expression: safeExpression };
-      } catch (e) {
+      } catch (_e) { // eslint-disable-line @typescript-eslint/no-unused-vars
         console.log('Safe power conversion failed, continuing with standard parsing');
       }
     }
@@ -365,7 +365,7 @@ export function findCriticalPoints(
                   type
                 });
               }
-            } catch (pointError) {
+            } catch (_pointError) { // eslint-disable-line @typescript-eslint/no-unused-vars
               // Only log if not too verbose
               if (Math.random() < 0.01) { // Only log ~1% of point errors to avoid console spam
                 console.warn(`Error evaluating at point (${x}, ${y})`);
@@ -387,7 +387,7 @@ export function findCriticalPoints(
               z,
               type: 'Undetermined' // Cannot determine without derivatives
             });
-          } catch (originError) {
+          } catch (_originError) { // eslint-disable-line @typescript-eslint/no-unused-vars
             console.warn('Failed to evaluate at origin (0,0)');
           }
         }
@@ -464,7 +464,7 @@ export function generate3DPlotData(
       try {
         const zValue = funcObj.fn.evaluate({ x: currentX, y: currentY });
         z[i][j] = zValue;
-      } catch (error) {
+      } catch (_error) { // eslint-disable-line @typescript-eslint/no-unused-vars
         z[i][j] = NaN; // Handle calculation errors
       }
     }

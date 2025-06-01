@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { generate2DContourData } from '@/lib/math/criticalPoints';
-import { Layout } from 'plotly.js';
 
 // Dynamically import Plotly to avoid SSR issues
 const Plot = dynamic(() => import('react-plotly.js'), { ssr: false });
@@ -20,7 +19,7 @@ interface Plot2DProps {
 }
 
 const Plot2D: React.FC<Plot2DProps> = ({ functionExpression, criticalPoints, selectedPoint = null }) => {
-  const [plotData, setPlotData] = useState<any[]>([]);
+  const [plotData, setPlotData] = useState<Array<Record<string, unknown>>>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -80,7 +79,7 @@ const Plot2D: React.FC<Plot2DProps> = ({ functionExpression, criticalPoints, sel
           showlabels: true,
         },
         name: `f(x,y) = ${functionExpression}`
-      } as any;
+      } as Record<string, unknown>;
 
       // Add critical points as scatter markers
       if (criticalPoints.length > 0) {
@@ -306,7 +305,7 @@ const Plot2D: React.FC<Plot2DProps> = ({ functionExpression, criticalPoints, sel
     } finally {
       setIsLoading(false);
     }
-  }, [functionExpression, criticalPoints, selectedPoint]);
+  }, [functionExpression, criticalPoints, selectedPoint, plotData]);
 
   if (isLoading) {
     return (
@@ -367,7 +366,7 @@ const Plot2D: React.FC<Plot2DProps> = ({ functionExpression, criticalPoints, sel
               family: 'Inter, system-ui, sans-serif',
               color: '#64748b'
             },
-          } as Partial<Layout>}
+          } as Record<string, unknown>}
           config={{
             responsive: true,
             displaylogo: false,

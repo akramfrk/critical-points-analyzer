@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { generate3DPlotData } from '@/lib/math/criticalPoints';
-import { Layout } from 'plotly.js';
 
 // Dynamically import Plotly to avoid SSR issues
 const Plot = dynamic(() => import('react-plotly.js'), { ssr: false });
@@ -20,7 +19,7 @@ interface Plot3DProps {
 }
 
 const Plot3D: React.FC<Plot3DProps> = ({ functionExpression, criticalPoints, selectedPoint = null }) => {
-  const [plotData, setPlotData] = useState<any[]>([]);
+  const [plotData, setPlotData] = useState<Array<Record<string, unknown>>>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -84,7 +83,7 @@ const Plot3D: React.FC<Plot3DProps> = ({ functionExpression, criticalPoints, sel
           }
         },
         name: `f(x,y) = ${functionExpression}`
-      } as any;
+      } as Record<string, unknown>;
 
       // Create scatter plots for critical points by type
       const plots = [surfacePlot];
@@ -363,7 +362,7 @@ const Plot3D: React.FC<Plot3DProps> = ({ functionExpression, criticalPoints, sel
             margin: { l: 50, r: 50, b: 65, t: 90, pad: 4 },
             paper_bgcolor: 'rgba(0,0,0,0)',
             plot_bgcolor: 'rgba(0,0,0,0)'
-          } as any}
+          } as Record<string, unknown>}
           useResizeHandler={true}
           config={{
             responsive: true,

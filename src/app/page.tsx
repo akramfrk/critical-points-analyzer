@@ -1,16 +1,12 @@
 "use client";
 
 import { useState } from 'react';
-import Link from 'next/link';
 import FunctionInputForm from '@/components/FunctionInputForm';
 import CriticalPointsTable from '@/components/CriticalPointsTable';
 import Plot3D from '@/components/Plot3D';
 import Plot2D from '@/components/Plot2D';
 import { findCriticalPoints } from '@/lib/math/criticalPoints';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
-import { convertToLatex } from '@/lib/utils/latex';
 import { InlineMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
@@ -48,16 +44,6 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       <div className="container mx-auto py-10 px-4 max-w-7xl">
         <header className="mb-10">
-          <div className="flex justify-end mb-2">
-            <Link href="/about">
-              <Button variant="ghost" size="sm" className="flex items-center gap-1.5 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                About
-              </Button>
-            </Link>
-          </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
               Critical Points Analyzer
@@ -232,7 +218,7 @@ export default function Home() {
                   </svg>
                   <h3 className="text-xl font-medium text-slate-700 dark:text-slate-300 mb-2">Enter a function to analyze</h3>
                   <p className="text-slate-500 dark:text-slate-400 max-w-md mx-auto">
-                    Input a function of two variables (x and y) in the panel on the left and click "Analyze Function" to see critical points and visualizations.
+                    Input a function of two variables (x and y) in the panel on the left and click &quot;Analyze Function&quot; to see critical points and visualizations.
                   </p>
                 </div>
               </div>

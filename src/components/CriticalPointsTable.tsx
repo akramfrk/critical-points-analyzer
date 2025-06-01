@@ -1,5 +1,4 @@
 import React from 'react';
-import { Separator } from '@/components/ui/separator';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
